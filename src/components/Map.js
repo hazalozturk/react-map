@@ -1,31 +1,31 @@
-import React from "react"
-import { compose, withProps } from "recompose"
-import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps"
-import KEY from ".././Secrets.js"
-
-const MyMapComponent = compose(
-  withProps({
-    googleMapURL: `https://maps.googleapis.com/maps/api/js?key=${KEY}&v=3.exp&libraries=geometry,drawing,places`,
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
-    mapElement: <div style={{ height: `100%` }} />,
-  }),
-  withScriptjs,
-  withGoogleMap
-)((props) =>
-  <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: 43.083130, lng: -73.784565 }}
-  >
-  </GoogleMap>
-)
+import React from "react";
+import 'ol/ol.css';
+import Map from 'ol/map';
+import View from 'ol/view';
+import TileLayer from 'ol/layer/tile';
+import XYZ from 'ol/source/xyz';
 
 class MyMap extends React.Component {
+  componentDidMount() {
+    let map = new Map({
+      layers: [
+        new TileLayer({
+          source: new XYZ({
+            url: 'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'
+          })
+        })
+      ],
+      target: 'map',
+      view: new View({
+        center: [-8213923.059525041, 5324603.39034538],
+        zoom: 15
+      })
+    });
+  }
+
   render() {
     return (
-      <MyMapComponent
-
-      />
+      <div id='map'></div>
     )
   }
 }
