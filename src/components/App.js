@@ -1,4 +1,5 @@
 import React from 'react';
+import MyMap from './Map.js'
 
 class App extends React.Component {
   render() {
@@ -11,7 +12,7 @@ class App extends React.Component {
         </div>
         <div className="row">
           <div className="col-md-4"> A </div>
-          <div className="col-md-8"> B </div>
+          <div className="col-md-8"> <MyMap /> </div>
         </div>
       </div>
     );
