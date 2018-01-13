@@ -1,0 +1,12 @@
+li {
+  list-style: none;
+  margin-top: 15%;
+}
+
+.placeVicinity {
+  font-style: oblique;
+}
+
+#map {
+  margin-top: 15%;
+}

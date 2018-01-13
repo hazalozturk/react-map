@@ -2,6 +2,7 @@ import React from 'react';
 import MyMap from './Map'
 import KEY from '../Secrets'
 import $ from 'jquery'
+import ListView from './ListView'
 
 class App extends React.Component {
   state={
@@ -31,11 +32,11 @@ class App extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h1> Name </h1>
+            <h1> Restaurant List of Saratoga Springs, NY </h1>
           </div>
         </div>
         <div className="row">
-          <div className="col-md-4"> A </div>
+          <div className="col-md-4"> <ListView items={this.state.items}/> </div>
           <div className="col-md-8"> <MyMap items={this.state.items} /> </div>
         </div>
       </div>
