@@ -11,7 +11,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const self = this;
-    var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" +
+    var url = "/maps/api/place/nearbysearch/json?" +
       $.param({
         language: "en",
         location: "43.08313,-73.784565",
