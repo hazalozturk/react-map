@@ -29,7 +29,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-md-12">
             <h1> Restaurant List of Saratoga Springs, NY </h1>
